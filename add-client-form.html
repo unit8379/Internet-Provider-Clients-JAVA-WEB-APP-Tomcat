@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Добавить клиента</title>
+    <link rel="shortcut icon" href="./content/internet.png" type="image/png">
+    <link rel="stylesheet" href="./bootstrap-4.5.3-dist/css/bootstrap.css">
+    <link rel="stylesheet" href="add-client-form-style.css">
+</head>
+
+<body>
+    <div class="container-md">
+        <form action="InsertNewAccountToDatabase" method="POST">
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label for="inputEmail4">Имя</label>
+                <input type="text" class="form-control" id="inputEmail4" name="firstName">
+              </div>
+              <div class="form-group col-md-6">
+                <label for="inputPassword4">Фамилия</label>
+                <input type="text" class="form-control" id="inputPassword4" name="lastName">
+              </div>
+            </div>
+
+            <div class="form-group">
+            <label for="inputState">Тариф</label>
+            <select id="inputState" class="form-control" name="tariffId">
+                <option selected value="1">1. Интернет25, IP услуги</option>
+                <option value="2">2. Интернет50, IP услуги</option>
+                <option value="3">3. Интернет75, IP услуги</option>
+                <option value="4">4. Интернет100, IP услуги</option>
+                <option value="5">5. Интернет150, IP услуги</option>
+                <option value="6">6. Интернет200, IP услуги</option>
+                <option value="7">7. Интернет300, IP услуги</option>
+                <option value="8">8. Всё и сразу 25</option>
+                <option value="9">9. Всё и сразу 50</option>
+            </select>
+            </div>
+            
+            <button type="submit" class="btn btn-primary">Добавить</button>
+        </form>
+        <a href="PrimaryPage">
+            <button id="returnButton" class="btn btn-secondary">Вернуться к списку</button>
+        </a>
+    </div>
+</body>
+</html>
