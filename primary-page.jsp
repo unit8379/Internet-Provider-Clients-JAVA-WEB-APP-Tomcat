@@ -1,5 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ page import ="JavaClasses.*" %>
+<%@ page import ="java.util.ArrayList" %>
 
 <!DOCTYPE html>
 <html lang="ru">
@@ -48,6 +50,23 @@
                 </tr>
             </thead>
             <tbody id="tbody">
+                
+                <% if (request.getAttribute("accounts") != null) {
+
+                    ArrayList<AccountBean> list = (ArrayList<AccountBean>) request.getAttribute("accounts");
+                
+                    for (AccountBean pill : list) {
+                        out.println("<tr>");
+                        out.println("<td>" + pill.getId() + "</td>");
+                        out.println("<td>" + pill.getFirstName() + "</td>");
+                        out.println("<td>" + pill.getLastName() + "</td>");
+                        out.println("<td>" + pill.getTariffName() + "</td>");
+                        out.println("<td>" + pill.getPrice() + "</td>");
+                        out.println("</tr>");
+                    }
+                  }
+                  %>
+                  <%--
                 <c:forEach var="account" items="${accounts}">
                     <tr>
                         <th scope="row">${account.id}</th>
@@ -56,7 +75,8 @@
                         <td>${account.tariffName}</td>
                         <td>${account.price}</td>
                     </tr> 
-                </c:forEach>
+                </c:forEach> 
+                --%>
             </tbody>
           </table>
     </main>

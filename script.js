@@ -7,5 +7,5 @@ function deleteRow() {
     request.open("POST", "http://localhost:8081/PSUTI_JAVA_WEB_APP/DeleteAccountFromDatabase");
     request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
     request.send(parameters);
-    location.reload()
+    location.href = window['location'].href;
 }
